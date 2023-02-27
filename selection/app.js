@@ -12,6 +12,13 @@
 // 		'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1920px-Cat_August_2010-4.jpg';
 // }
 
+
+
+
+//Classname dan juga tag name sama sama berupa HTML collection, jadi jika isi colection nya sudah di set, maka 
+//elemen nya tidak diambill dari list colection lagi
+
+
 // const squareImages = document.getElementsByClassName('square');
 
 // for (let img of squareImages) {

@@ -1,4 +1,6 @@
+
 Untuk mendapatkan Elemen menggunakan DOM di javascript ada 3 cara yang paling umum digunakan
+
 - getElementById('') = mengambil elemen dari parameter id
 - getElementByTagName('') = mengambil elemen dari parameter name
 - getElementByClassName('') = mengambil elemen dari parameter class
