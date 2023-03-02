@@ -1,0 +1,209 @@
+
+Untuk mendapatkan Elemen menggunakan DOM di javascript ada 3 cara yang paling umum digunakan
+
+- getElementById('') = mengambil elemen dari parameter id
+- getElementByTagName('') = mengambil elemen dari parameter name
+- getElementByClassName('') = mengambil elemen dari parameter class
+
+Cara lain yang bisa digunakan untuk mendapatkan elemen bisa menggunakan querySelector
+
+- document.querySelector('p') / document.querySelectorAll('p')
+
+dengan menggunakan querySelector, kita bisa menangkap elemen dengan lebih spesifik
+
+seperti dibawah ini document.querySelector('input[type="checkbox"]' )
+
+----------------------------------------------------------------------------------------------------------
+
+
+MEMAHAMI INNER TEXT, INNER HTML dan TEXTCONTENT
+
+untuk menggunakan 3 item diatas kita perlu memasukan nilai elemennya kedalam sebuah parameter
+
+contohnya saat kita ingin mengambil nilai dari paragraf seperti bawah ini
+
+const paragraf = document.querySelector('p')   //awalnya buat variabel paragraf
+
+// kemudian untuk mendapatkan isi dari paragraf tersebut tinggal memamnggil variabel dan menggunakan iiner text, inner HTML, ataupun TEXTCONTENT
+
+paragraf.innerText   // inner text digunakan untuk mendapatkan nilai text dari elemen yang kita ambil
+paragraf.innerHtml //inner html digunakan untuk mendapatkan nilai text dalam bentuk html 
+paragraf.textContent // text content digunakan untuk mendapatkan nilai text tapi dengan spasi dan tab sesuai source nya
+
+
+------------------------------------------------------------------------------------------------------------
+
+CARA MENDAPATKAN ATAU MELIHAT ATRIBUT DARI ELEMEN HTML
+
+untuk melihat atribut yang ada pada tiap elemen bisa menggunakan cara seperti ini
+
+document.querySelector('#banner').attributes 
+
+//panggil dulu elemen dengan querySelector, kemudian panggil attributes
+
+setelah tau ada attributes apa saja yang ada didalam elemen html tersebut, kita bisa buatkan variabel untuk mengambil setiap source attribut nya seperti dibwah ini
+
+const banner = document.querySelector('#banner')
+
+kemudian tinggal ambil tiap nilai atribut dengan nilai variabel nya seperti contoh dibawah ini
+
+banner.id 
+banner.src
+banner.alt
+
+untuk menambahkan attribut bisa menggunakan fungsi setAttribute seperti contoh dibawah ini
+
+banner.setAttribute('class','class-gambar')
+
+untuk mengambil antribut yang yang baru ditambahkan bisa menggunakan fungsi get atribut
+
+banner.getAttribute('class')
+
+
+---------------------------------------------------------------------------------------------------------------
+
+STYLING DENGAN FUNGSI CLASS LIST
+
+biasanya saaat kita membahkan style pada sebuah elemen yang sudah memiliki style bawaan, maka style akan ditimpa, namun dengan menggunakan class list hal tersebut dapat dihindari.
+
+
+misalkan ada sebuah elemen dengan style yang berasal dari class border, kemudian kita ingin menambahkan 
+style dari class baru, bisa menggunakan classlist add seperti dibawah ini.
+
+
+heading.classList.add('class','bg-info') 
+
+untuk menghapus style dari class bisa menggunakan remove
+
+heading.classList.remove('class','bg-info')
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+Menjelajahi Element Parent, Child Dan Sibling
+
+
+PARENT 
+
+
+untuk mengetahui parentElement, kita bisa menggunakan fungsi parentElement
+misalkan kita akan mencari tahu parent elemen dari elemen yang menggunakan style bold
+
+bisa dimulai dengan membuat sebuah variabel untuk mendapatkan nilai nilai yang memiliki ketentuan bold
+
+const textBold = document.querySelector('b')
+
+setelah selesai membuat variabelnya, tinggal kita cek saja dengan cara 
+
+textBold.parentElement 
+
+jika masih ingin melihat parentelement lebih lanjut bisa menggunakan cara ini
+
+textBold.parentElement.parentElement.parentElement 
+
+sampai nilai parent hasilnya null, tandanya sudah tidak ada lagi parent element nya
+
+
+
+CHILD
+
+untuk child sebenarnya sama saja kaya kita manggil paret, namun dalam child biasanya akan ditampilkan dalam
+bentuk html collection, jadi kalo mau manggil salah satu dari elemen yang kita mau bisa dengan cara seperti ini
+
+const paragraf = document.querySelector('p') 
+
+paragraf.children 
+
+paragraf.children[6]; 
+
+
+SIBLING
+
+berguna untuk megetahui elemen sebelum dan sesudah sebuah elemen
+
+const imgSquare = document.querySelector('.square')
+
+imgSquare.previousSibling // untuk mendapatkan nilai sebelum elemen
+
+imgSquare.previousElementSibling // untuk mendapatkan elemen sebelum elemen
+
+imgSquare.nextSibling // untuk mendapatkan nilai sesudah elemen
+
+imgSquare.nextElementSibling // untuk mendapatkan elemen sesudah elemen
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+APPEND DAN APPEND CHILD
+
+kedua fungsi ini berguna untuk menambahkan konten seperti inner, dan setiap konten akan masuk di bagian akhir setiap konten
+
+perbedaan nya adalah pada jenis konten yang ditambahkan
+
+
+
+
+
+Append hanya digunakan untuk menambahkan konten berbentuk text
+
+const paragraf = document.querySelector('p') 
+
+paragraf.append('BOB is My CAT') 
+
+
+
+AppendChild digunakan untuk menambahkan konten yang lebih variatif
+
+misalkan kita mau menambahkan file gambar
+
+-pertama buat dulu element baru dengan   const newImage = document.createElement('img')
+
+-kedua isi elemen baru yang masi kosong tadi seperti ini newImage.src= 'https://www.lookslikefilm.com/wp-content/uploads/2019/08/Beata-Miro.jpg' 
+
+-ketiga tinggal masukin elemen yang uda diisi ke web dengan  document.body.appendChild(newImage)
+
+-terkahir tinggal input style sesuai kebutuhan dengan class list
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+INSERT ADJACENT ELEMENT
+
+fungsi ini berguna untuk menambahkan konten diantara 2 elemen caranya sepeerti berikut
+
+- pertama masukan sebuah elemen ke variabel,  const h1 = document.querySelector('h1') 
+
+- kedua buat elemen baru const h2 = document.createElement('h2')
+
+- ketiga isi elemen baru dengan konten h2.append('This IS Cute Cat')
+
+- keempat masukan konten dengan fungsi INSERT ADJACENT ELEMENT, h1.insertAdjacentElement('afterend',h2) 
+
+- afterend adalah posisi dimana konten di taruh
+
+
+---------------------------------------------------------------------------------------------------------------
+
+REMOVE 
+
+cara meremove elemen adalah dengan memasukan elemen ke variabel const catImage = document.querySelector('img') 
+kemudian tingal remove dengan fungsi catImage.remove()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
