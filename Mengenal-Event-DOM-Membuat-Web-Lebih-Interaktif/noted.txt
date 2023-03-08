@@ -1,0 +1,5 @@
+event bisa dijalankan pada attribut HTML dan bisa juga dijalankan dalam Proprti DOM
+
+
+saat menulis event didalam properti DOM, sebaiknya kita tulis sebagai function
+karena jika tidak, maka bakal langsung di eksekusi otomatis sebelum kita jalankan
