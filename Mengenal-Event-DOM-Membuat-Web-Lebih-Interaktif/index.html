@@ -101,12 +101,92 @@
 <br>
 <br>
 
-<h1></h1>
-<form action="/destination">
-<input type="text" id="input-form"></input> 
-<button id="submit-btn">Submit</button>
+<h1>Latihan prevent default untuk mencegah berpindah halaman saat sebuah form di submit</h1>
+<form id="form1" action="/destination">
+<input type="text"></input> 
+<button>Submit</button>
 </form>
-<script src="/6.eventPreventDefault.js"></script>
+
+
+<!-------------------------------------------------------------------------------------------------------->
+<!---7.Latihan prevent default untuk mencegah berpindah halaman saat sebuah form di submit, dan membuat input realtime--->
+
+
+<br>
+<br>
+
+<h1>Latihan prevent default untuk mencegah berpindah halaman saat sebuah form di submit + realtime input</h1>
+<form id="form2" action="/destination">
+<input type="text" id="inputValue"></input> 
+<button>Submit</button>
+
+<ul id="notes">
+    <!-- <li></li> -->
+</ul>
+
+</form>
+
+
+
+<!-------------------------------------------------------------------------------------------------------->
+<!---8. Event Change dan Input untuk mengetahui proses yang terjadi didalam elemen --->
+
+
+<br>
+<br>
+
+<h1>EVENT INPUT DAN CHANGE PADA FORM</h1>
+<form id="form3" action="/destination">
+<input type="text" id="inputValue2"></input> 
+<button>Submit</button>
+
+<ul id="notes2">
+    <!-- <li></li> -->
+</ul>
+
+</form>
+
+
+
+<!-------------------------------------------------------------------------------------------------------->
+<!---9. Event Bubling untuk mengeksekusi source code yang bertumpuk dalam 1 bungkus div atau apapun--->
+<!---Untuk mencegah pengesekusian code padaa saat bertumpuk bisa menbuat parameter baru 'e', kemudian pake e.stopproagation--->
+
+
+<br>
+<br>
+
+<h1>Event Bubling</h1>
+<div id="container">
+Click to Change
+    <button id="changeColor">change color</button>
+</div>
+
+
+
+<!-------------------------------------------------------------------------------------------------------->
+<!---10. Event Delegation, event dimana kita menargetkan parent suatu elemen untuk memanipulasi isi nya--->
+<!---pada case ini contoh penargetan parent ul--->
+
+<br>
+<br>
+
+<h1>Latihan Event Delegation</h1>
+<form id="forms" action="/destination">
+<input type="text" id="inputValue3"></input> 
+<button>Submit</button>
+
+<ul id="notes3">
+    <!-- <li></li> -->
+    <p>LAOS</p>
+</ul>
+
+</form>
+
+
+
+
+<script src="/10.eventDelegation(penargetan).js"></script>
 
 </body>
 </html>
